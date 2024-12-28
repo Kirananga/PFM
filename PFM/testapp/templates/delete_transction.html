@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Transaction</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'delete_transaction.css' %}">
+</head>
+<body>
+<div class="container">
+    <h2>Delete Transaction</h2>
+    <p>Are you sure you want to delete this transaction?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+    </form>
+    <a href="{% url 'transaction_list' %}">Cancel</a>
+</div>
+</body>
+</html>

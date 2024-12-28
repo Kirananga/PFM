@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Overview</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'overview_report.css' %}">
+</head>
+<body>
+<div class="container">
+    {% block content %}
+    <div class="header">
+        <h2>Financial Overview</h2>
+        <a href="{% url 'home' %}" class="home-button">Home</a> <!-- Home button -->
+    </div>
+
+    <form method="get" class="filter-form">
+        <label for="start_date">Start Date:</label>
+        <input type="date" name="start_date" id="start_date" value="{{ form.start_date.value }}">
+        <label for="end_date">End Date:</label>
+        <input type="date" name="end_date" id="end_date" value="{{ form.end_date.value }}">
+        <button type="submit" class="btn">Filter</button>
+    </form>
+
+    <div class="report-summary">
+        <p><strong>Total Income:</strong> {{ total_income }}</p>
+        <p><strong>Total Expense:</strong> {{ total_expense }}</p>
+        <p><strong>Net Balance (Savings):</strong> {{ net_balance }}</p>
+        <a href="{% url 'income_report' %}" class="btn">View Income Report</a>
+        <a href="{% url 'expense_report' %}" class="btn">View Expense Report</a>
+    </div>
+    {% endblock %}
+</div>
+</body>
+</html>

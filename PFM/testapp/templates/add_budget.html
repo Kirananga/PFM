@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if form.instance.pk %}Edit Budget{% else %}Add Budget{% endif %}</title>
+    {% load static %}
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="{% static 'add_budget.css' %}">
+</head>
+<body>
+
+{% block content %}
+<div class="container">
+    <h2>{% if form.instance.pk %}Edit Budget{% else %}Add Budget{% endif %}</h2>
+
+    <!-- Form to add or edit a budget -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Render form fields -->
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+
+    <!-- Cancel Button -->
+    <a href="{% url 'budget_list' %}" class="btn btn-secondary">Cancel</a>
+</div>
+{% endblock %}
+
+</body>
+</html>

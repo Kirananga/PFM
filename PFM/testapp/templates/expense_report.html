@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Report</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'expense_report.css' %}">
+</head>
+<body>
+<div class="container">
+    {% block content %}
+    <div class="header">
+        <h2>Expense Report</h2>
+        <a href="{% url 'home' %}" class="home-button">Home</a> <!-- Home button -->
+    </div>
+
+    <form method="get">
+        <label for="start_date">Start Date:</label>
+        {{ form.start_date }}
+        <label for="end_date">End Date:</label>
+        {{ form.end_date }}
+        <button type="submit" class="btn">Filter</button>
+    </form>
+
+    <h3>Total Expense: {{ total_expense }}</h3>
+
+    <h4>Category Breakdown</h4>
+    <table>
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+        <tr>
+            <td>{{ category.category }}</td>
+            <td>{{ category.total }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}
+</div>
+</body>
+</html>

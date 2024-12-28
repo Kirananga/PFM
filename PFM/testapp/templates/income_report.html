@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Report</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'income_report.css' %}">
+</head>
+<body>
+<div class="container">
+    {% block content %}
+    <div class="header">
+        <h2>Income Report</h2>
+        <a href="{% url 'home' %}" class="home-button">Home</a> <!-- Home button added -->
+    </div>
+    <form method="get">
+        <label for="start_date">Start Date:</label>
+        {{ form.start_date }}
+        <label for="end_date">End Date:</label>
+        {{ form.end_date }}
+        <button type="submit" class="btn">Filter</button>
+    </form>
+
+    <h3>Total Income: {{ total_income }}</h3>
+
+    <h4>Category Breakdown</h4>
+    <table>
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+        <tr>
+            <td>{{ category.category }}</td>
+            <td>{{ category.total }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}
+</div>
+</body>
+</html>

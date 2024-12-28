@@ -1,0 +1,124 @@
+/* General Reset */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fff8e1; /* Light yellow background for a warm feel */
+    color: #333;
+}
+
+/* Centered Container */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff; /* White container for contrast */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-title {
+    font-size: 28px;
+    color: #f57c00; /* Vibrant orange for the title */
+    margin-bottom: 10px;
+}
+
+.header-subtitle {
+    font-size: 16px;
+    color: #ff9800; /* Softer orange for the subtitle */
+}
+
+/* Form Section */
+.transaction-form {
+    margin-top: 20px;
+}
+
+.transaction-form label {
+    font-weight: bold;
+    color: #f57c00; /* Orange labels for consistency */
+}
+
+.transaction-form input,
+.transaction-form textarea,
+.transaction-form select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ffcc80; /* Light orange border */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #fff3e0; /* Soft yellow-orange background */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transaction-form input:focus,
+.transaction-form textarea:focus,
+.transaction-form select:focus {
+    border-color: #f57c00; /* Darker orange on focus */
+    box-shadow: 0 0 4px rgba(245, 124, 0, 0.6);
+    outline: none;
+}
+
+/* Save Button */
+.save-button {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #e64a19; /* Deep red-orange for save button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.save-button:hover {
+    background-color: #d84315; /* Slightly darker red-orange on hover */
+    transform: scale(1.02);
+}
+
+/* Navigation Footer */
+.navigation {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.back-link {
+    font-size: 16px;
+    color: #ff5722; /* Vibrant reddish-orange for the back link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.back-link:hover {
+    color: #e64a19; /* Darker reddish-orange on hover */
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .header-title {
+        font-size: 24px;
+    }
+
+    .save-button {
+        font-size: 16px;
+    }
+
+    .back-link {
+        font-size: 14px;
+    }
+}

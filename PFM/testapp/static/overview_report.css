@@ -1,0 +1,139 @@
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fff5f0; /* Soft light peach background */
+}
+
+/* Container Styling */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #d85c5c; /* Soft red for the header */
+}
+
+.home-button {
+    background-color: #ff7f50; /* Coral for Home button */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #e65c50; /* Darker coral on hover */
+}
+
+/* Filter Form Styling */
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.filter-form label {
+    font-size: 16px;
+    color: #d85c5c; /* Soft red for labels */
+    margin-right: 5px;
+}
+
+.filter-form input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.filter-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ff6347; /* Tomato red for filter button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-form button:hover {
+    background-color: #e53e3e; /* Darker red on hover */
+}
+
+/* Report Summary Styling */
+.report-summary {
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.report-summary p {
+    font-size: 18px;
+    color: #343a40;
+    margin: 10px 0;
+}
+
+.report-summary a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ff6347; /* Tomato red for the link */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.report-summary a:hover {
+    background-color: #e53e3e; /* Darker tomato on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    .filter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-form input,
+    .filter-form button {
+        width: 100%;
+    }
+
+    .report-summary p {
+        font-size: 16px;
+    }
+
+    .report-summary a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}

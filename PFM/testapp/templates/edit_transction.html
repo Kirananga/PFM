@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Transaction</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'edit_transction.css' %}">
+</head>
+<body>
+<div class="container">
+    <h2>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Transaction</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <div class="navigation-buttons">
+        <a href="{% url 'transaction_list' %}" class="back-button">Back to Transactions</a>
+        <a href="{% url 'home' %}" class="home-button">Home</a>
+    </div>
+</div>
+</body>
+</html>

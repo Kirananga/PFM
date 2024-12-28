@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Personal Finance Manager</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- For icons -->
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <!-- Logo Section -->
+        <a href="{% url 'home' %}" class="navbar-brand">
+            <img src="{% static 'images/Nav Logo.jpeg' %}" alt="PFM Logo" class="logo">
+        </a>
+        <!-- Title Section -->
+        <div class="navbar-center">
+            <span class="navbar-title">Personal Finance Manager</span>
+        </div>
+        <!-- Links Section -->
+        <ul class="navbar-links">
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}" class="btn btn-primary">Login</a></li>
+            <li><a href="{% url 'register' %}" class="btn btn-secondary">Register</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+</body>
+</html>

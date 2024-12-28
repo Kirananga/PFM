@@ -1,0 +1,142 @@
+/* General Reset */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #2c3e50; /* Darker background for contrast */
+    color: #ecf0f1; /* Light text color for contrast against dark background */
+}
+
+/* Centered Container */
+.container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #34495e; /* Darker gray-blue background for the container */
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Header */
+.container h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #e74c3c;  /* Red for a bold, attention-grabbing header */
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Form Styling */
+form {
+    margin-top: 20px;
+}
+
+form label {
+    font-size: 16px;
+    color: #ecf0f1; /* Light text for labels */
+    margin-bottom: 8px;
+    display: block;
+    font-weight: 500;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: 2px solid #e74c3c; /* Red border for inputs */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #7f8c8d; /* Muted gray background */
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #c0392b; /* Darker red when focused */
+    background-color: #95a5a6; /* Lighter gray background on focus */
+    outline: none;
+}
+
+/* Save Button */
+form button {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2980b9; /* Blue button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1c5987; /* Darker blue on hover */
+    transform: scale(1.05);
+}
+
+/* Navigation Buttons (Back and Home) */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.navigation-buttons a {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navigation-buttons .back-button {
+    background-color: #f39c12;  /* Yellow-orange for back button */
+}
+
+.navigation-buttons .back-button:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+.navigation-buttons .home-button {
+    background-color: #27ae60;  /* Green for home button */
+}
+
+.navigation-buttons .home-button:hover {
+    background-color: #2ecc71;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 40px auto;
+    }
+
+    form button,
+    .navigation-buttons a {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    form button,
+    .navigation-buttons a {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

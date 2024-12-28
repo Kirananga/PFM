@@ -1,0 +1,98 @@
+/* Reset Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background-color: #ff6347; /* Tomato red background for navbar */
+    padding: 10px 20px;
+    position: fixed; /* Ensure navbar stays at the top */
+    top: 0;
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* Space between brand, title, and links */
+    align-items: center;
+    max-width: 1200px; /* Center align and constrain width */
+    margin: 0 auto; /* Center the container */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo {
+    width: 40px; /* Logo size */
+    height: auto;
+    margin-right: 10px; /* Space between logo and title (if needed) */
+}
+
+.navbar-center {
+    flex: 1; /* Allow it to take the remaining space */
+    text-align: center;
+}
+
+.navbar-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: white; /* White text for the title */
+    margin: 0; /* No extra margin */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 15px; /* Space between links */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white; /* White text color for links */
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Button Styles */
+.navbar-links .btn-primary {
+    background-color: #ff4500; /* Orange-red for primary button */
+}
+
+.navbar-links .btn-secondary {
+    background-color: #f0ad4e; /* Soft orange for secondary button */
+}
+
+.navbar-links .btn-primary:hover {
+    background-color: #e03e00; /* Darker orange-red on hover */
+}
+
+.navbar-links .btn-secondary:hover {
+    background-color: #ec971f; /* Darker orange on hover */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column; /* Stack elements on small screens */
+        align-ite

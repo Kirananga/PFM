@@ -1,0 +1,84 @@
+/* General Reset */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f6f9; /* Soft light gray background */
+    color: #333;
+}
+
+/* Centered Container */
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Slightly larger shadow */
+    text-align: center;
+}
+
+/* Header */
+.container h2 {
+    font-size: 28px;
+    color: #6a1b9a; /* Purple color for header */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Message */
+.container p {
+    font-size: 18px;
+    color: #555; /* Slightly lighter gray for text */
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Form Buttons */
+form button {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #8e24aa; /* Vibrant purple for button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: #7b1fa2; /* Darker purple on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Cancel Button */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #1976d2; /* Blue color for the cancel link */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1565c0; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    form button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    a {
+        font-size: 14px;
+    }
+}

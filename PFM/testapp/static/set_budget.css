@@ -1,0 +1,226 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fff8f1; /* Light orange background */
+    color: #333;
+}
+
+/* Header Section */
+header {
+    background-color: #ff7f50; /* Coral color */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #e74c3c; /* Red background */
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: #fff;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+nav a:hover {
+    background-color: #ff6347; /* Tomato color on hover */
+    color: white;
+}
+
+/* Container for Content */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Header */
+h2 {
+    text-align: center;
+    color: #ff7f50; /* Coral color */
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px 18px;
+    text-align: left;
+    border-bottom: 2px solid #f0f2f5;
+}
+
+table th {
+    background-color: #ff6347; /* Tomato color for headers */
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray rows */
+}
+
+table tr:hover {
+    background-color: #f1f1f1; /* Hover effect */
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #ff6347; /* Tomato color */
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #e65c50; /* Darker tomato */
+}
+
+.btn-danger {
+    background-color: #e74c3c; /* Red for danger */
+}
+
+.btn-danger:hover {
+    background-color: #c0392b; /* Darker red */
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #ff6347; /* Tomato color focus */
+    background-color: #fff;
+    outline: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e74c3c; /* Red background */
+    color: white;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c; /* Red color for back button */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.back-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+/* Home Button */
+.home-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff7f50; /* Coral color for home button */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.home-btn:hover {
+    background-color: #ff4500; /* Darker coral */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav a {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+    .btn,
+    .btn-danger,
+    .back-btn,
+    .home-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea {
+        padding: 12px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Budgets</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'budget_list.css' %}">
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <h2>Your Budgets</h2>
+    <div class="btn-container">
+        <a href="{% url 'add_budget' %}" class="btn btn-primary">Add Budget</a>
+        <a href="{% url 'home' %}" class="btn btn-home">Home</a> <!-- Home button added here -->
+
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>Budget Limit</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for budget in budgets %}
+        <tr>
+            <td>{{ budget.category }}</td>
+            <td>${{ budget.budget_limit }}</td>
+            <td>
+                <a href="{% url 'edit_budget' budget.pk %}">Edit</a>
+                <a href="{% url 'delete_budget' budget.pk %}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3" style="text-align: center;">No budgets found. Add a budget to get started.</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+</body>
+</html>

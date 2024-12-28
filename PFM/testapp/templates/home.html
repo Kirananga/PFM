@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Personal Finance Manager</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="icon" href="{% static 'images/LOGO.png' %}" type="image/png">
+</head>
+<body>
+
+{% include 'nav.html' %}
+
+<!-- Main Container -->
+<main class="container">
+
+    <div class="welcome-section">
+        <h1>
+            Welcome
+            {% if user.is_authenticated %}{{ user.username }}{% else %}to Personal Finance Manager{% endif %}
+        </h1>
+        <p>Take control of your income, expenses, and savings today.</p>
+    </div>
+
+    {% if user.is_authenticated %}
+    <div class="button-grid">
+        <button class="btn" onclick="location.href='{% url 'transaction_list' %}'">
+            <i class="fas fa-list"></i> View All Transactions
+        </button><br>
+        <button class="btn" onclick="location.href='{% url 'add_transaction' %}'">
+            <i class="fas fa-plus"></i> Add Income/Expense
+        </button>
+        <br>
+        <button class="btn" onclick="location.href='{% url 'income_report' %}'">
+            <i class="fas fa-coins"></i> Track Income
+        </button>
+        <br>
+        <button class="btn" onclick="location.href='{% url 'expense_report' %}'">
+            <i class="fas fa-wallet"></i> Track Expenses
+        </button>
+        <button class="btn" onclick="location.href='{% url 'overview_report' %}'">
+            <i class="fas fa-chart-line"></i> View Savings
+        </button>
+        <button class="btn" onclick="location.href='{% url 'budget_list' %}'">
+            <i class="fas fa-wallet"></i> Manage Budgets
+        </button>
+        <button class="btn" onclick="location.href='{% url 'set_budget' %}'">
+            <i class="fas fa-dollar-sign"></i> Set Budget
+        </button>
+        <button class="btn" onclick="location.href='{% url 'check_budget_exceedance' %}'">
+            <i class="fas fa-exclamation-triangle"></i> Check Budget Exceedance
+        </button>
+        <button class="btn" onclick="window.location.href='{% url 'backup_data' %}'">
+            <i class="fas fa-cloud-download-alt"></i> Download Backup
+        </button>
+        <button class="btn" onclick="location.href='{% url 'restore_data' %}'">
+            <i class="fas fa-cloud-upload-alt"></i> Restore Backup
+        </button>
+    </div>
+    {% else %}
+    <div class="hero-section">
+        <p>Please <a href="{% url 'login' %}">log in</a> to access your financial tools.</p>
+    </div>
+    {% endif %}
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Personal Finance Manager. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

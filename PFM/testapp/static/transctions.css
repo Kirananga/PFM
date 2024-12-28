@@ -1,0 +1,128 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+    background-color: #fff5f0; /* Light peach background for contrast */
+    color: #333; /* Text color */
+}
+
+/* Header Section */
+.transactions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    width: 90%;
+}
+
+.transactions-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #ff4500; /* Orange-red color */
+}
+
+.header-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.home-button, .btn-add {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Home Button */
+.home-button {
+    background-color: #ff6347; /* Tomato red for Home */
+}
+
+.home-button:hover {
+    background-color: #e53e00; /* Darker tomato red */
+}
+
+/* Add New Transaction Button */
+.btn-add {
+    background-color: #ff7f50; /* Coral color for success */
+}
+
+.btn-add:hover {
+    background-color: #e65c50; /* Darker coral on hover */
+}
+
+/* Table Styling */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #ff4500; /* Orange-red header */
+    color: #fff;
+}
+
+thead th {
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffe4b5; /* Light yellow-orange for alternate rows */
+}
+
+tbody td {
+    padding: 12px 15px;
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background-color: #ffebcd; /* Light peach background on hover */
+}
+
+/* Actions Links */
+tbody td a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ff6347; /* Tomato red color for links */
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+tbody td a:hover {
+    background-color: #ff6347;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    tbody td, thead th {
+        font-size: 12px;
+    }
+
+    .home-button, .btn-add {
+        font-size: 14px;
+    }
+}

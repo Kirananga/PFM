@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restore Data</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+
+{% include 'nav.html' %}
+
+<main class="container">
+    <h2>Restore Backup Data</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="backup_file">Upload Backup File (JSON):</label>
+        <input type="file" name="backup_file" id="backup_file" required />
+
+        <label for="action">Restore Action:</label>
+        <select name="action" id="action">
+            <option value="overwrite">Overwrite Existing Data</option>
+            <option value="merge">Merge with Existing Data</option>
+        </select>
+
+        <button type="submit" class="btn">Restore Data</button>
+    </form>
+
+</main>
+
+<footer>
+    <p>&copy; 2024 Personal Finance Manager. All rights reserved.</p>
+</footer>
+</body>
+</html>
