@@ -101,52 +101,6 @@ def delete_transaction(request, pk):
         messages.success(request, "Transaction deleted successfully.")
         return redirect('transaction_list')
     return render(request, 'delete_transction.html', {'transaction': transaction})
-
-@login_required
-def income(request):
-    # Filter transactions by type 'income' for the logged-in user
-    incomes = Transaction.objects.filter(user=request.user, transaction_type='income')
-    total_income = incomes.aggregate(total=Sum('amount'))['total'] or 0
-    categories = incomes.values('category').annotate(total=Sum('amount'))
-
-    context = {
-        'incomes': incomes,
-        'total_income': total_income,
-        'categories': categories,
-    }
-    return render(request, 'income.html', context)
-
-@login_required
-def expense(request):
-    # Filter transactions by type 'expense' for the logged-in user
-    expenses = Transaction.objects.filter(user=request.user, transaction_type='expense')
-    total_expense = expenses.aggregate(total=Sum('amount'))['total'] or 0
-    categories = expenses.values('category').annotate(total=Sum('amount'))
-
-    context = {
-        'expenses': expenses,
-        'total_expense': total_expense,
-        'categories': categories,
-    }
-    return render(request, 'expense.html', context)
-
-@login_required
-def overview(request):
-    # Calculate total income and expense
-    incomes = Transaction.objects.filter(user=request.user, transaction_type='income')
-    expenses = Transaction.objects.filter(user=request.user, transaction_type='expense')
-
-    total_income = incomes.aggregate(total=Sum('amount'))['total'] or 0
-    total_expense = expenses.aggregate(total=Sum('amount'))['total'] or 0
-    net_balance = total_income - total_expense
-
-    context = {
-        'total_income': total_income,
-        'total_expense': total_expense,
-        'net_balance': net_balance,
-    }
-    return render(request, 'overview.html', context)
-
 @login_required(login_url='login')
 def income_report(request):
     """View to display income report."""
