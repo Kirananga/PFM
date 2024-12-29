@@ -11,7 +11,7 @@ This application helps users manage their personal finances by tracking income, 
 
 ## User Manual
 The detailed user manual is available in the `docs` folder:
-[User Manual](./docs/Personal Finance Management.pdf)
+[User Manual](Personal Finance Management.pdf)
 
 ## Installation
 - Clone the repository
